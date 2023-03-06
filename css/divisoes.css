@@ -88,7 +88,6 @@ body{
 /* ////////////////////////////////////////////////////////////////////////////////// */
 .icon{
     width: 50px;
-    
 }
 .w-1x{
     width: 100%;
@@ -102,7 +101,26 @@ body{
 .w-4x{
     width: 400%;
 }
-
+.calendar{
+    width: 60px;
+    position: relative;
+}
+.calendar input{
+    pointer-events: none;
+    opacity: 100;
+    top: 0;
+    left: 0;
+   
+    cursor: pointer;
+    border: none;
+  }
+  
+  .calendar input[type="date"]::-webkit-calendar-picker-indicator{
+    pointer-events: all;
+    width: 80px;
+    height: 50px;
+  }
+ 
 
 
   
