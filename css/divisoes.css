@@ -3,7 +3,6 @@
     padding: 0px;
     font-family: 'Montserrat', sans-serif;
     
-
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 body{
@@ -13,7 +12,7 @@ body{
 .verticalDiv{
     width: 10vw;
     height: 1px;
-    background-color: rgba(33, 33, 33, 0.509);
+    background-color: rgba(33, 33, 33, 0);
 }
 .horizontalDiv{
     width: 100%;
@@ -34,6 +33,25 @@ body{
              -22px -22px 44px #b5b5b5;
     
 }
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.direita{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.grade{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px 200px;
+}
+
+
 
 .navegador{
     width: 100%;
@@ -86,9 +104,7 @@ body{
 
 
 /* ////////////////////////////////////////////////////////////////////////////////// */
-.icon{
-    width: 50px;
-}
+
 .w-1x{
     width: 100%;
 }
@@ -114,13 +130,29 @@ body{
     cursor: pointer;
     border: none;
   }
-  
-  .calendar input[type="date"]::-webkit-calendar-picker-indicator{
+.calendar input[type="date"]::-webkit-calendar-picker-indicator{
     pointer-events: all;
     width: 80px;
     height: 50px;
   }
- 
 
+/* redimensionamento de imagens */
+.icon{
+    width: 50px;
+    object-fit: cover;
+    aspect-ratio: 4/4;
+}
+.img4_4{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/4;
+  }
+  
+  .img16_9{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+  }
+  
 
   

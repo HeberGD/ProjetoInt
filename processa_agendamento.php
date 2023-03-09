@@ -15,8 +15,8 @@
         </div>
         <!-- <input type="date" id="data" name="dtconsulta" readonly value=""> -->
 
-        <label for="horario">Horário:</label>
-        <select name="horario" required>
+        <label for="hora_inicio">Horário:</label>
+        <select name="hora_inicio" required>
             <option value="">Selecione um horário</option>
             <option value="09:00:00">09:00</option>
             <option value="09:30:00">09:30</option>
@@ -38,6 +38,10 @@
     </form>
     <?php
         session_start();
+
+        // $dtconsulta = filter_input(INPUT_POST, 'dtconsulta', FILTER_SANITIZE_STRING); 
+        // $hora_inicio   = filter_input(INPUT_POST, 'hora_inicio', FILTER_SANITIZE_STRING);
+        // $disponivel   = filter_input(INPUT_POST, 'disponivel', FILTER_SANITIZE_STRING);
         // Conexão com o banco de dados MySQL
         $host = "localhost";
         $user = "root";
@@ -50,14 +54,19 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Recupera as informações do formulário
             $dtconsulta = $_POST["dtconsulta"];
-            $horario = $_POST["horario"];
+            $hora_inicio = $_POST["hora_inicio"];
 
             // Verifica se o horário está disponível
-            $sql = "SELECT * FROM horario WHERE dtconsulta = '$dtconsulta' AND hora_inicio = '$horario' AND disponivel = 1";
+            $sql = "SELECT * FROM horario WHERE dtconsulta = '$dtconsulta' AND hora_inicio = '$hora_inicio' AND disponivel = 1";
             $result = mysqli_query($conn, $sql);
-
+            if (mysqli_num_rows($result) > 0) {
+                $sql = "UPDATE horario SET disponivel = 2 WHERE dtconsulta = '$dtconsulta' AND hora_inicio = '$hora_inicio';";
+                echo"$sql  ";
+            }
             if (mysqli_num_rows($result) > 0) {
                 // Horário está disponível
+                $dtconsulta = $_POST["dtconsulta"];
+                $hora_inicio = $_POST["hora_inicio"];
                 echo "Horário disponível. Pode agendar a consulta.";
             } else {
                 // Horário já está ocupado
