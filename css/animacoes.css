@@ -33,12 +33,15 @@
 	}
 }
 /* Animação dos links */
+/* .nav-link{
+  opacity: 70%;
+} */
 a:hover{
   animation: pulse 0.4s forwards ;
 }
 @keyframes pulse {
   100% {
-    transform: scale(1.20) ;
+    font-weight: bold;
   }
 }
 /* Animação dos cards */

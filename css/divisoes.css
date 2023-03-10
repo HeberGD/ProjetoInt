@@ -8,6 +8,8 @@
 body{
     background-color: rgb(255, 255, 255);
     overflow-x: hidden;
+   
+    
 }
 .verticalDiv{
     width: 10vw;
@@ -17,12 +19,13 @@ body{
 .horizontalDiv{
     width: 100%;
     height: 3vw;
-    background-color: rgba(255, 255, 255, 0.848);
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .boxUniversal{
     display: flex;
     justify-content: space-between;
+    justify-content: center;
 }
 .bodydiv{
     border-radius: 2vw;
@@ -38,10 +41,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .direita{
     display: flex;
     justify-content: right;
+    align-items: center;
+}
+.esquerda{
+    display: flex;
+    justify-content: left;
     align-items: center;
 }
 .grade{
@@ -66,11 +75,11 @@ body{
 .carrosel{
     margin: 0px;
     border: 0px;
-    width: 100%;
-    height: 43vw;
+    width: 90%;
+    height: 42vw;
 }
 .cassoselInfo{
-    width: 1280px;
+    width: 90vw;
     height: 230px;
     margin-top: 10px;
     border: 0px;
@@ -85,6 +94,23 @@ body{
     border-width: 0.3vw;
     border-radius: 3vw;
 }
+
+
+
+.menu{
+    margin: 15px;
+    display: flex !important;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.menuresponsivo{
+    margin-top: 15px;
+}
+
+
+
 /* RESPONSIVIDADE HTML CSS JQUERY*/
 .tam{
     height: 190px !important;
@@ -93,12 +119,10 @@ body{
     width: 0;
     height: 0;
     position: absolute;
+    pointer-events: none;
+    opacity: 0;
 }
-.mobilesz{
-    width: 90vw !important;
-    text-align: center;
-    
-}
+
 
 
 
@@ -151,7 +175,8 @@ body{
   .img16_9{
     width: 100%;
     object-fit: cover;
-    aspect-ratio: 16/9;
+    aspect-ratio:18/9;
+    
   }
   
 
