@@ -2,8 +2,10 @@
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$dbname = "bd16";
+$dbname = "pi";
 
 //Cria a conexão
 $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+
+
 ?>
